@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class RecursiveFibonacci {
+
+    static long fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter position n (0-92): ");
+        int n = input.nextInt();
+
+        if (n < 0 || n > 92) {
+            System.out.println("Invalid input!");
+            input.close();
+            return;
+        }
+
+        System.out.println("Fibonacci number: " + fibonacci(n));
+
+        input.close();
+    }
+}
